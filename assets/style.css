@@ -1,0 +1,81 @@
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body{
+        background: #000000;
+        overflow: hidden;
+    }
+
+    #img-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transform-style: preserve-3d;
+        transform: perspective(1000px) rotateY(0deg);
+        transition: transform 0.7s;
+        position: relative;
+        height: 200px;
+        width: 200px;
+        margin: 10em auto 0 auto;
+    }
+
+    #img-container span{
+        position: absolute;
+        top: 0;
+        left: 0 ;
+        transform: rotateY(calc(var(--i)*45deg)) translateZ(400px);
+    }
+
+    span img{
+        height: 200px;
+        width: 200px;
+        border-radius: 2px;
+    }
+
+    .btn-container{
+        width: 20.9em;
+        margin: 4.1em auto;
+        display: flex;
+        justify-content: center;
+        justify-content: space-between;
+    }
+
+    .btn{
+        background: rgb(4, 154, 4);
+        color: white;
+        width: 60px;
+        height: 30px;
+        border-radius: 5px;
+        cursor: pointer;
+        border: none;
+    }
+
+    .btn-container :hover{
+        background: rgb(8, 186, 8);        
+    }
+
+    /* ---------- ----------- Mobile Screen */
+
+    @media screen and (max-width: 415px){
+
+        #img-container{
+            display: flex;
+            height: 150px;
+            width: 150px;
+            position: relative;
+        }
+
+        span img{
+            height: 150px;
+            width: 150px;
+        }
+
+        .btn-container {
+            width: 15.6em;
+            margin: 3.1em auto;
+        }
+    }
